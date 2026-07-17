@@ -1,8 +1,4 @@
 resource "aws_s3_bucket" "lab_bucket" {
-  bucket = "terraform-lab-benedict"
-
-  tags = {
-    Environment = "training"
-    Owner       = "benedict"
-  }
+  bucket = local.name_prefix
+  tags = local.common_tags
 }
