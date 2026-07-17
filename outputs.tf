@@ -8,7 +8,7 @@ output "bucket_arn" {
   value       = aws_s3_bucket.lab_bucket.arn
 }
 
-output "aws_Account_id" {
+output "aws_account_id" {
   value = data.aws_caller_identity.current.account_id
 }
 
