@@ -11,5 +11,12 @@ module "logs_bucket" {
   source = "./modules/s3-bucket"
 
   bucket_name = "${local.name_prefix}-logs"
-  tags = merge(local.common_tags, { Purpose = "logs" })
+  tags        = merge(local.common_tags, { Purpose = "logs" })
+}
+
+module "website_bucket" {
+  source = "./modules/s3-bucket"
+
+  bucket_name = "${local.name_prefix}-website"
+  tags        = merge(local.common_tags, { Purpose = "static-website" })
 }
